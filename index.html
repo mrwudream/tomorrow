@@ -1,88 +1,49 @@
-githup配置步骤：
-1.新建本地文件夹，在文件夹中右键打开git。
-1.输入命令ls -al ~/.ssh  
-检查SSH keys是否存在（本地服务器与gitup建立连接）
-2.如果不存在则输入命令ssh-keygen -t rsa -C "xxxxx@xxxxx.com" 
-（邮箱地址） 添加一个SSH（一路回车）。
-3.成功后在C盘用户文件夹找到 .ssh文件夹，复制第二个文件（.pub）里的密钥粘贴到githup官网设置里的SSH KEYS添加此密钥。
-4.输入命令ssh -T git@github.com建立连接，输入yes后成功建立连接。
-5.以上步骤只需操作一遍，以后便可使用githup
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .box0{
+            width: 1000px;
+            height: 400px;
+            margin: 100px auto;
+        }
+        li{
+            width: 200px;
+            height: 400px;
+            overflow: hidden;
+            float: left;
+        }
 
-
-githup上传步骤：
-1.输入命令git init 
-初始化本地仓库（生成 .git隐藏文件夹），并把需要上传的文件放在此文件夹同级目录下，html文件必须放在同级目录且文件名称最好为index.html，这样可以和githup默认路径一致，便于访问操作。
-2.输入git status 
-查看本地文件状态（可以查看红色的本地文件名）
-3.输入git add . 添加所有文件
-4.输入git status 查看本地文件上传状态
-5.输入git commit  -m ' 此处填写提示信息（如：第一次修改）  '提交更改到本地
-6.在gitup网站新建仓库，打开后复制仓库SSH地址
-7.输入命令git remote add origin 加ssh地址后回车（作用：将地址赋值给变量origin，此后可以直接使用此变量代替）
-8.输入git push -u origin  master  向远程推送（master：或其他分支名，-u：以数据流的方式上传，速度较快）
-9.在gitup网站刷新后打开设置，在gitup pages的source选项中选择主分支master branch并保存，保存好产生的网址就是打开此分支的网址。
-
-
-文件修改上传步骤：
-1.输入git status 查看本地文件修改状态
-2.输入git add . 添加所有文件
-3.输入git commit  -m  '  '
-
-4..输入git push -u origin  master  向远程推送
-5.过程较慢，稍等后访问
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-git init 初始化本地仓库
-
-git status 查看本地文件状态
-git add 添加更改
-git add . 添加所有
-git commit 提交更改
-git push -u origin 分支名   向远程推送
-
-git config -l  查看配置文件
-git config --global user.email ''  设置用户信息
-git config --global user.name ''   设置用户信息
-
-ls -al ~/.ssh  检查SSH keys是否存在
-ssh-add ~/.ssh/id_rsa  将新生成的key添加到ssh-agent中
-ssh-keygen -t rsa -C "xxxxx@xxxxx.com"  添加一个SSH
-ssh -T git@github.com
-git remote rm origin
-git remote add origin
-
-git branch   查看本地分支
-git branch -a  查看远程分支
-git branch 分支名  创建分支
-git checkout  切换分支
-
-
-
-如果输入$ git push origin master
-
-    提示出错信息：error:failed to push som refs to .......
-
-    解决办法如下：
-
-    1、先输入$ git pull origin master //先把远程服务器github上面的文件拉下来
-
-    2、再输入$ git push origin master
-
-    3、如果出现报错 fatal: Couldn't find remote ref master或者fatal: 'origin' does not appear to be a git repository以及fatal: Could not read from remote repository.
-
-    4、则需要重新输入$ git remote add origin
+    </style>
+</head>
+<body>
+<div class="box0">
+    <ul class="uu0">
+        <li><img src="1.jpg" alt=""/></li>
+        <li><img src="2.jpg" alt=""/></li>
+        <li><img src="3.jpg" alt=""/></li>
+        <li><img src="4.png" alt=""/></li>
+        <li><img src="7.jpg" alt=""/></li>
+    </ul>
+</div>
+</body>
+<script src="../../../../jquerymin.js"></script>
+<script>
+    $(function(){
+        $('li').hover(function(){
+            $(this).stop().animate({width:600},300).siblings().stop().animate({width:80},300);
+        },function(){
+            $('li').stop().animate({width:200},300);
+        })
+    })
+</script>
+</html>
